@@ -1,4 +1,11 @@
-export function formatDate(date, fmt = 'yyyy-MM-dd hh:mm:ss') {
+import VConsole from 'vconsole'
+/**
+ * @param {string} date - 时间戳
+ * @param {string} fmt -  转换格式
+ * @returns  {string}
+ * @description  时间转换
+ */
+const formatDate = (date, fmt = 'yyyy-MM-dd hh:mm:ss') => {
   if (typeof date === 'string') {
     return date
   }
@@ -23,3 +30,16 @@ export function formatDate(date, fmt = 'yyyy-MM-dd hh:mm:ss') {
   }
   return fmt
 }
+
+/**
+ * @param {string} type - prod  生产环境 不开启调试
+ * @returns  new VConsole
+ * @description   开启微信调试模式
+ */
+const openVConcole = (type) => {
+  if (!type.startsWith('prod')) {
+    return new VConsole()
+  }
+}
+
+export { formatDate, openVConcole }

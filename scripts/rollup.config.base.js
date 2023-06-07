@@ -8,11 +8,11 @@ import { terser } from 'rollup-plugin-terser'
 import clear from 'rollup-plugin-clear'
 import { name, version, author } from '../package.json'
 
-const pkgName = 'xy-utils'
+const pkgName = 'utils'
 const banner =
 '/*!\n' +
 ` * ${name} v${version}\n` +
-` * (c) 2014-${new Date().getFullYear()} ${author}\n` +
+` * (c) 2023-${new Date().getFullYear()} ${author}\n` +
 ' * Released under the MIT License.\n' +
 ' */'
 

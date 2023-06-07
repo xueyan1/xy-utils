@@ -1,4 +1,5 @@
 {
+  "name":"i福田",
   "plugins": [
     "plugins/markdown",
     "plugins/summarize"
@@ -12,8 +13,19 @@
     "excludePattern": "(^|\\/|\\\\)_",
     "exclude": []
   },
-  "tutorial1":{
-    "title": "测试"
+  "tutorial1": {
+    "title": "Tutorial One",
+    "children": {
+      "childA": {
+        "title": "Child A"
+      },
+      "childB": {
+        "title": "Child B"
+      }
+    }
+  },
+  "tutorial2": {
+    "title": "Tutorial Two"
   },
   "sourceType": "module",
   "tags": {

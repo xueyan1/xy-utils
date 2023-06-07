@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: applet/index.js</title>
+    <title>JSDoc: Source: utils/index.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: applet/index.js</h1>
+    <h1 class="page-title">Source: utils/index.js</h1>
 
     
 
@@ -27,24 +27,25 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * Applet : 小程序功能模块
- * @module  Applet
+ * utils : 通用工具
+ * @module  utils
  * @author xueyan
- * @name  小程序功能模块
+ * @name  通用工具
  */
 /**
- * @name 判断是否在小程序环境
- * @see isAppletEnv
+ * @name 日期转化
+ * @see formatDate
  */
+import * as date from './date'
 /**
- * @name 跳转到i福田小程序
- * @see navigateToApplet
+ * @name 打开Vconcole
+ * @see openVConcole
  */
-
-import * as navigate from './navigate'
+import * as vconsole from './console'
 
 export default {
-  ...navigate
+  ...date,
+  ...vconsole
 }
 </code></pre>
         </article>

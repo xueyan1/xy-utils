@@ -1,11 +1,11 @@
-import * as date from './date'
 import * as applet from '../src/applet/index'
-const IFT = {
+import * as baseUtils from '../src/utils/index'
+const XY = {
   Util: {
-    ...date
+    ...baseUtils.default
   },
   Applet: {
-    ...applet
+    ...applet.default
   }
 }
-export default IFT
+export default XY

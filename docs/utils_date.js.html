@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: date.js</title>
+    <title>JSDoc: Source: utils/date.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: date.js</h1>
+    <h1 class="page-title">Source: utils/date.js</h1>
 
     
 
@@ -26,14 +26,18 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import VConsole from 'vconsole'
-/**
+            <pre class="prettyprint source linenums"><code>/**
+ *  时间转换工具类
  * @param {string} date - 时间戳
  * @param {string} fmt -  转换格式
  * @returns  {string}
- * @description  时间转换
+ * @inner
+ * @example
+ * formatDate(new Date())
+ * 2023-06-07 13:43:01
+ * console.log(formatDate(new Date()))
  */
-const formatDate = (date, fmt = 'yyyy-MM-dd hh:mm:ss') => {
+export const formatDate = (date, fmt = 'yyyy-MM-dd hh:mm:ss') => {
   if (typeof date === 'string') {
     return date
   }
@@ -58,19 +62,6 @@ const formatDate = (date, fmt = 'yyyy-MM-dd hh:mm:ss') => {
   }
   return fmt
 }
-
-/**
- * @param {string} type - prod  生产环境 不开启调试
- * @returns  new VConsole
- * @description   开启微信调试模式
- */
-const openVConcole = (type) => {
-  if (!type.startsWith('prod')) {
-    return new VConsole()
-  }
-}
-
-export { formatDate, openVConcole }
 </code></pre>
         </article>
     </section>
@@ -81,7 +72,7 @@ export { formatDate, openVConcole }
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#formatDate">formatDate</a></li><li><a href="global.html#isApplet">isApplet</a></li><li><a href="global.html#navigateToApplet">navigateToApplet</a></li><li><a href="global.html#openVConcole">openVConcole</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-%25E5%25B0%258F%25E7%25A8%258B%25E5%25BA%258F%25E5%258A%259F%25E8%2583%25BD%25E6%25A8%25A1%25E5%259D%2597.html">小程序功能模块</a></li><li><a href="module-%25E9%2580%259A%25E7%2594%25A8%25E5%25B7%25A5%25E5%2585%25B7.html">通用工具</a></li></ul><h3>Global</h3><ul><li><a href="global.html#formatDate">formatDate</a></li><li><a href="global.html#isAppletEnv">isAppletEnv</a></li><li><a href="global.html#navigateToApplet">navigateToApplet</a></li><li><a href="global.html#openVConcole">openVConcole</a></li></ul>
 </nav>
 
 <br class="clear">

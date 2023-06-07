@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: applet/index.js</title>
+    <title>JSDoc: Source: applet/navigate.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: applet/index.js</h1>
+    <h1 class="page-title">Source: applet/navigate.js</h1>
 
     
 
@@ -26,25 +26,30 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
- * Applet : 小程序功能模块
- * @module  Applet
- * @author xueyan
- * @name  小程序功能模块
- */
-/**
- * @name 判断是否在小程序环境
- * @see isAppletEnv
- */
-/**
- * @name 跳转到i福田小程序
- * @see navigateToApplet
- */
+            <pre class="prettyprint source linenums"><code>import wx from 'weixin-sdk-js'
 
-import * as navigate from './navigate'
+/**
+ * @returns {boolean} true, false
+ * @function isAppletEnv
+ * @summary 判断是否在小程序环境
+ */
+export const isAppletEnv = () => {
+  return window.__wxjs_environment === 'miniprogram' // 小程序环境
+}
 
-export default {
-  ...navigate
+/**
+ * @summary 跳转到i福田小程序， 打开第三方小程序
+ * @param {string} appId - 跳转的小程序appId， 可不传，直接跳转i福田小程序路径
+ * @param {string} appPagePath -跳转的小程序路径
+ * @param {string} [navigateType=navigateTo] - 跳转方式: navigateTo ,switchTab,reLaunch,redirectTo
+ * @function navigateToApplet
+ */
+export const navigateToApplet = (appId, appPagePath, navigateType = 'navigateTo') => {
+  let path = decodeURIComponent(appPagePath)
+  path = appId ? `/pages/tabbar/not-found/not-found?appId=${appId}&amp;path=${path}` : path
+  wx.miniProgram[navigateType]({
+    url: path
+  })
 }
 </code></pre>
         </article>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: applet/index.js</title>
+    <title>JSDoc: Source: utils/console.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: applet/index.js</h1>
+    <h1 class="page-title">Source: utils/console.js</h1>
 
     
 
@@ -26,25 +26,17 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
- * Applet : 小程序功能模块
- * @module  Applet
- * @author xueyan
- * @name  小程序功能模块
+            <pre class="prettyprint source linenums"><code>import VConsole from 'vconsole'
+/** 开启微信调试模式
+ * @param {string}  [env=dev]   生产环境不开启调试
+ * @returns  new VConsole
+ * @inner
+ * @function
  */
-/**
- * @name 判断是否在小程序环境
- * @see isAppletEnv
- */
-/**
- * @name 跳转到i福田小程序
- * @see navigateToApplet
- */
-
-import * as navigate from './navigate'
-
-export default {
-  ...navigate
+export function openVConcole(env) {
+  if (!env.startsWith('prod')) {
+    return new VConsole()
+  }
 }
 </code></pre>
         </article>
